@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo, useState } from 'react';
-import { getZeroDevSigner, getSocialWalletOwner } from '@zerodevapp/sdk';
-import { SocialWallet } from '@zerodevapp/social-wallet';
+// import { getZeroDevSigner, getSocialWalletOwner } from '@zerodevapp/sdk';
+// import { SocialWallet } from '@zerodevapp/social-wallet';
 
 declare global {
     interface Window {
@@ -17,40 +17,38 @@ const ConnectWallet = () => {
 
     const socialWallet = useMemo(() => {
 
-        return new SocialWallet();
+        // return new SocialWallet();
 
     }, []);
 
-    const createWallet = async () => {
+    // const createWallet = async () => {
+    //     try {
+    //         setLoading(true);
 
-        try {
+    //         const signer = await getZeroDevSigner({
+    //             projectId: 'b5486fa4-e3d9-450b-8428-646e757c10f6',
+    //             owner: await getSocialWalletOwner('b5486fa4-e3d9-450b-8428-646e757c10f6', socialWallet)
+    //         });
 
-            setLoading(true);
+    //         const userAddress = await signer.getAddress();
+    //         setAddress(userAddress);
 
-            const signer = await getZeroDevSigner({
-                projectId: 'b5486fa4-e3d9-450b-8428-646e757c10f6',
-                owner: await getSocialWalletOwner('b5486fa4-e3d9-450b-8428-646e757c10f6', socialWallet)
-            });
+    //     }
+    //     catch (e) {
 
-            const userAddress = await signer.getAddress();
-            setAddress(userAddress);
+    //         console.log(e);
+    //     }
+    //     finally {
+    //         setLoading(false);
+    //     }
+    // };
 
-        }
-        catch (e) {
+    // const disconnect = async () => {
 
-            console.log(e);
-        }
-        finally {
-            setLoading(false);
-        }
-    };
+    //     await socialWallet.disconnect();
 
-    const disconnect = async () => {
-
-        await socialWallet.disconnect();
-
-        setAddress(undefined);
-    };
+    //     setAddress(undefined);
+    // };
 
     return (
         <div className="flex flex-col justify-center items-center h-screen">
@@ -58,7 +56,7 @@ const ConnectWallet = () => {
                 Connect Wallet
             </button>
 
-            <div>
+            {/* <div>
                 {!address && <button className='bg-gray-300 p-3' onClick={createWallet} disabled={loading}>{loading ? 'loading...' : 'Connect Wallet'}</button>}
                 {!!address &&
                     <button className='bg-gray-300 p-3' onClick={disconnect} disabled={loading}>Disconnect</button>
@@ -68,7 +66,7 @@ const ConnectWallet = () => {
                 <div>
                     <label> {`${address.substring(0, 6)}...${address.substring(address.length - 5, address.length)}`}</label>
                 </div>
-            }
+            } */}
         </div>
     )
 };
