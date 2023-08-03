@@ -1,1 +1,1 @@
-# Next.JS Prisma CRUD APP!
+# Next.JS Prisma CRUD App!
