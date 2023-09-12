@@ -25,7 +25,7 @@ export const GET = async (request: NextRequest) => {
         }
 
         return NextResponse.json(
-            { message: "ok", data: blogData }
+            { data: blogData }
         );
 
     } catch (error) {

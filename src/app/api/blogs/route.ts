@@ -24,7 +24,7 @@ export const GET = async (request: NextRequest) => {
         const blogs = await prisma.post.findMany();
 
         return NextResponse.json(
-            { message: "ok", data: blogs }, { status: 200 }
+            { data: blogs }, { status: 200 }
         );
 
     } catch (error) {
