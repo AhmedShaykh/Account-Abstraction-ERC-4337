@@ -1,1 +1,0 @@
-# Next.JS Prisma CRUD App!
